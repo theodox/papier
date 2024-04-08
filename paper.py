@@ -645,12 +645,24 @@ if __name__=='__main__':
     epd.text("Hello world", 5, 10, 0x60)
     epd.text("Pico_ePaper-2.9", 5, 20, 0x80)
     epd.text("Raspberry Pico", 5, 30, epd.darkgray)
+    import requests
+
+    url = "https://www.waveshare.com"
+    response = requests.get(url)
+    print(response.status_code)
+    blah = response.raw.read(256).decode()
+    epd.text(blah, 5, 40, 0xff)
+    
     epd.log("text done")
     epd.log("!")
     epd.delay_ms(2000)
 
     epd.fill_rect(70, 180, 50, 80, epd.grayish)
-    epd.display(epd.buffer)
+    epd.display_Base(epd.buffer)
+
+
+
+    
 
     print("DONE")
     sys.exit(0)

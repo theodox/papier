@@ -668,7 +668,6 @@ if __name__=='__main__':
     epd.text("Raspberry Pico", 5, 30, 0x00)
     epd.display(epd.buffer)
     epd.delay_ms(2000)
-    sys.exit(0)
     epd.vline(10, 40, 60, 0x00)
     epd.vline(120, 40, 60, 0x00)
     epd.hline(10, 40, 110, 0x00)
@@ -677,7 +676,6 @@ if __name__=='__main__':
     epd.line(120, 40, 10, 100, 0x00)
     epd.display(epd.buffer)
     epd.delay_ms(2000)
-    
     epd.rect(150, 5, 50, 55, 0x00)
     epd.fill_rect(150, 65, 50, 115, 0x00)
     epd.display_Base(epd.buffer)
@@ -687,6 +685,8 @@ if __name__=='__main__':
         epd.fill_rect(220, 60, 10, 10, 0xff)
         epd.text(str(i), 222, 62, 0x00)
         epd.display_Partial(epd.buffer)
+    print ("DDDD")
+    sys.exit(0)
 
     # Portrait
     epd = EPD_2in9_Portrait()
